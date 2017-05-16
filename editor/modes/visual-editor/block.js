@@ -38,6 +38,7 @@ class VisualEditorBlock extends wp.element.Component {
 		this.maybeStartTyping = this.maybeStartTyping.bind( this );
 		this.removeOnBackspace = this.removeOnBackspace.bind( this );
 		this.mergeBlocks = this.mergeBlocks.bind( this );
+		this.updateWidth = this.updateWidth.bind( this );
 		this.previousOffset = null;
 	}
 
@@ -135,9 +136,25 @@ class VisualEditorBlock extends wp.element.Component {
 		}
 	}
 
+	isWide() {
+		return this.props.block.attributes.align === 'wide';
+	}
+
 	componentDidMount() {
 		if ( this.props.focus ) {
 			this.node.focus();
+		}
+
+		window.addEventListener( 'resize', this.updateWidth );
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener( 'resize', this.updateWidth );
+	}
+
+	updateWidth() {
+		if ( this.isWide() ) {
+			this.forceUpdate();
 		}
 	}
 
@@ -168,6 +185,17 @@ class VisualEditorBlock extends wp.element.Component {
 			wrapperProps = settings.getEditWrapperProps( block.attributes );
 		}
 
+		const layout = document.querySelector( '.editor-layout__content' );
+		const editor = document.querySelector( '.editor-visual-editor' );
+		let style;
+
+		if ( layout && editor && this.isWide() ) {
+			style = {
+				width: layout.offsetWidth,
+				marginLeft: -( layout.offsetWidth / 2 ) + ( editor.offsetWidth / 2 ),
+			};
+		}
+
 		// Disable reason: Each block can be selected by clicking on it
 
 		/* eslint-disable jsx-a11y/no-static-element-interactions, jsx-a11y/onclick-has-role, jsx-a11y/click-events-have-key-events */
@@ -184,6 +212,7 @@ class VisualEditorBlock extends wp.element.Component {
 				className={ className }
 				data-type={ block.blockType }
 				tabIndex="0"
+				style={ style }
 				{ ...wrapperProps }
 			>
 				{ ( ( isSelected && ! isTyping ) || isHovered ) && <BlockMover uid={ block.uid } /> }
