@@ -1,53 +1,52 @@
 # Gutenberg
 
-Prototyping since 1440.
+[![Build Status](https://img.shields.io/travis/com/WordPress/gutenberg/master.svg)](https://travis-ci.com/WordPress/gutenberg)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
 
-![Text block](https://wpcoredesign.mystagingwebsite.com/gutenberg/gutenberg.png)
+![Screenshot of the Gutenberg Editor, editing a post in WordPress](https://user-images.githubusercontent.com/1204802/73433964-2540d900-4346-11ea-94f3-5df2e9d876bc.png)
 
-This is the development and prototyping hub for the editor focus in core.
-Gutenberg is the project name. Conversations and discussions take place in #core-editor in Slack. This is our kickoff goal:
+Welcome to the development hub for the WordPress Gutenberg project!
 
-> The editor will endeavour to create a new page and post building experience that makes writing rich posts effortless, and has “blocks” to make it easy what today might take shortcodes, custom HTML, or “mystery meat” embed discovery. — Matt Mullenweg
+"Gutenberg" is a codename for a whole new paradigm in WordPress site building and publishing, that aims to revolutionize the entire publishing experience as much as Gutenberg did the printed word. Right now, the project is in the first phase of a four-phase process that will touch every piece of WordPress -- Editing, Customization, Collaboration, and Multilingual -- and is focused on a new editing experience, the block editor.
 
-WordPress already supports a large amount of "blocks", but doesn't surface them very well, nor give them many rich layout options. By embracing the blocky nature, we can hopefully surface blocks that already exist, as well as attach more advanced layout options to each of them, allowing you to easily write richer posts.
+The block editor introduces a modular approach to pages and posts: each piece of content in the editor, from a paragraph to an image gallery to a headline, is its own block. And just like physical blocks, WordPress blocks can added, arranged, and rearranged, allowing WordPress users to create media-rich pages in a visually intuitive way -- and without work-arounds like shortcodes or custom HTML.
 
-In the end you should be able to start up a new post, _type type type_ then _click click click_ and effortlessly end up with a rich post like this: <a href="http://moc.co/sandbox/example-post/">Example Post</a>.
+The block editor first became available in December 2018, and we're still hard at work refining the experience, creating more and better blocks, and laying the groundwork for the next three phases of work. The Gutenberg plugin gives you the latest version of the block editor so you can join us in testing bleeding-edge features, start playing with blocks, and maybe get inspired to build your own.
 
-## Overview
+## Getting Started
 
-- <a href="https://make.wordpress.org/core/2017/01/17/editor-technical-overview/">Editor Technical Overview</a>
-- <a href="https://wpcoredesign.mystagingwebsite.com/gutenberg/">Editor Mockups</a>
-- <a href="https://wordpress.github.io/gutenberg/">Prototypes</a>.
-- <a href="https://github.com/Automattic/wp-post-grammar">WP Post grammar parser</a>.
+Get hands on: check out the [block editor live demo](https://wordpress.org/gutenberg/) to play with a test instance of the editor.
 
-## How You Can Contribute
+### Using Gutenberg
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+-   **Download:** To use the latest release of the Gutenberg plugin on your WordPress site: install from the plugins page in wp-admin, or [download from the WordPress.org plugins repository](https://wordpress.org/plugins/gutenberg/).
 
-## Why
+-   **User Documentation:** See the [WordPress Editor documentation](https://wordpress.org/support/article/wordpress-editor/) for detailed docs on using the editor as an author creating posts and pages.
 
-One thing that sets WordPress apart from other systems is that it allows you to create as rich a post layout as you can imagine. But only if you know HTML & CSS and build your own custom theme. By thinking of the editor as a tool to let you write rich posts, and in a few clicks create beautiful layouts, hopefully we can make people start to _love_ WordPress, as opposed to pick it because it's what everyone else uses to blog.
+-   **User Support:** If you have run into an issue, you should check the [Support Forums first](https://wordpress.org/support/forums/). The forums are a great place to get help. If you have a bug to report, please [submit it to the Gutenberg repository](https://github.com/wordpress/gutenberg/issues). Please search prior to creating a new bug to confirm its not a duplicate.
 
-## Ingredients
+### Developing for Gutenberg
 
-**The Block**
+Extending and customizing is at the heart of the WordPress platform, this is no different for the Gutenberg project. The editor and future products can be extended by third-party developers using plugins.
 
-The web is mostly a vertical flow of content, as dictated by the document markup underneath. By surfacing each section of the document as a block to manipulate, we can contextually attach features that are unique to each block. Inspired by desktop layout apps, it's a way to add a breadth of advanced features without weighing down the UI.
+Review the [Create a Block tutorial](/docs/designers-developers/developers/tutorials/create-block/readme.md) for the fastest way to get started extending the block editor. See the [Developer Documentation](https://developer.wordpress.org/block-editor/developers/) for extensive tutorials, documentation, and API references.
 
-By showing critical UI in the body of the content, many can get their basic blogging done, with rich layouts, without ever having to see the post settings.
+### Contribute to Gutenberg
 
-**Advanced Formatting**
+Gutenberg is an open-source project and welcomes all contributors from code to design, from documentation to triage. The project is built by many [contributors and volunteers](https://github.com/WordPress/gutenberg/blob/master/CONTRIBUTORS.md) and we'd love your help building it.
 
-When the Post Settings sidebar is open — which it is by default — you are essentially in advanced layout mode. By default you'll see all your metaboxes right there.
+See the [Contributors Handbook](https://developer.wordpress.org/block-editor/contributors/) for all the details on how you can contribute. See [CONTRIBUTING.md](https://github.com/WordPress/gutenberg/blob/master/CONTRIBUTING.md) for the contributing guidelines.
 
-Every block can be _inspected_ by clicking it. And every block has advanced layout options available in the inspector; text might have drop-cap, image might have fixed position scrolling. As such, block attributes fall in two camps — the most important ones available right on the block, advanced ones living in the sidebar inspector.
+As with all WordPress projects, we want to ensure a welcoming environment for everyone. With that in mind, all contributors are expected to follow our [Code of Conduct](https://github.com/WordPress/gutenberg/blob/master/CODE_OF_CONDUCT.md).
 
-**The Newline as your Commandline**
+## Get Involved
 
-When your cursor is on a new line, you can either start typing, or you can use one of these commands to do cool things:
+You can join us in the `#core-editor` channel in Slack, see the [WordPress Slack page](https://make.wordpress.org/chat/) for signup information; it is free to join.
 
-- Type `/` to invoke the inserter.
-- Type `-` to start a list, other Markdown tricks work too.
-- Type `#` for headlines. Note the space.
+**Weekly meetings** The Editor Team meets weekly on Wednesdays at 14:00 UTC in Slack. If you can not join the meeting, agenda and notes are posted to the [Make WordPress Blog](https://make.wordpress.org/core/).
 
-Some of these work already, but the idea can be extended in the future. For example `#tagname` (no space) might let you add tags in the body of the content.
+## License
+
+WordPress is free software, and is released under the terms of the GNU General Public License version 2 or (at your option) any later version. See [LICENSE.md](LICENSE.md) for complete license.
+
+<br/><br/><p align="center"><img src="https://s.w.org/style/images/codeispoetry.png?1" alt="Code is Poetry." /></p>

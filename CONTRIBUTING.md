@@ -1,33 +1,25 @@
-# Contributing
+# Contributing Guidelines
 
-## Installing & Building the Plugin
+Welcome to WordPress' Gutenberg project! We hope you join us in creating the future platform for publishing; all are welcome here.
 
-Gutenberg is a node based project, built primarily in JavaScript. Be sure to have <a href="https://nodejs.org/en/">Node installed first</a>. If you already have node installed, make sure it's version 6.10.3 or higher for this plugin to work correctly. You can check your node version by typing `node -v` in the Terminal prompt.
+## How can I contribute?
 
-To test the plugin, or to contribute to it, you can clone this repository and build the plugin files using Node.
+To learn all about contributing to the Gutenberg project, see the [Contributor Guide](/docs/contributors/readme.md). The handbook includes all the details you need to get setup and start shaping the future of web publishing.
 
-To do that, open a terminal (or if on Windows, a command prompt) and navigate to the repository you cloned. Now type `npm install` to get the dependencies all set up. Once that finishes, you can type `npm run build`. You can now upload the entire repository to your `wp-content/plugins` directory on your webserver and activate the plugin from the WordPress admin. You'll get a separate WordPress menu item called Gutenberg.
+- Code? See the [developer section](/docs/contributors/develop.md).
 
-You can also type `npm run package-plugin` which will run the two commands above and create a zip file automatically for you which you can use to install Gutenberg through the WordPress admin.
+- Design? See the [design section](/docs/contributors/design.md).
 
-If you have a local WordPress environment, you can clone this repository into your `wp-content/plugins` directory directly. Then you can type `npm run dev` in your terminal or command prompt to keep the plugin building in the background as you work on it.
+- Documentation? See the [documentation section](/docs/contributors/document.md).
 
-Some good options for a local WordPress development environment include <a href="https://varyingvagrantvagrants.org/">VVV</a> and <a href="https://www.mamp.info/">Mamp</a>.
+- Triage? We need help reviewing existing issues to make sure they’re relevant and actionable. Triage is an important contribution because it allows us to work on the highest priority issues. To learn more, please see the [triaging issues section](docs/contributors/triage.md).
 
-## Workflow
+## Guidelines
 
-A good workflow is to work directly in this repo, branch off `master`, and submit your changes as a pull request.
+- As with all WordPress projects, we want to ensure a welcoming environment for everyone. With that in mind, all contributors are expected to follow our [Code of Conduct](/CODE_OF_CONDUCT.md).
 
-Ideally name your branches with prefixes and descriptions, like this: `[type]/[change]`. A good prefix would be:
+- All WordPress projects are [licensed under the GPLv2+](/LICENSE.md), and all contributions to Gutenberg will be released under the GPLv2+ license. You maintain copyright over any contribution you make, and by submitting a pull request, you are agreeing to release that contribution under the GPLv2+ license.
 
-- `add/` = add a new feature
-- `try/` = experimental feature, "tentatively add"
-- `update/` = update an existing feature
+## Reporting Security Issues
 
-For example, `add/gallery-block` means you're working on adding a new gallery block. 
-
-You can pick among all the <a href="https://github.com/WordPress/gutenberg/issues">tickets</a>, or some of the ones labelled <a href="https://github.com/WordPress/gutenberg/labels/Good%20First%20Task">Good First Task</a>.
-
-## How Designers Can Contribute
-
-If you'd like to contribute to the design or front-end, feel free to contribute to tickets labelled <a href="https://github.com/WordPress/gutenberg/issues?q=is%3Aissue+is%3Aopen+label%3ADesign">Design</a>. We could use your thoughtful replies, mockups, animatics, sketches, doodles. Proposed changes are best done as minimal and specific iterations on the work that precedes it so we can compare. If you use <a href="https://www.sketchapp.com/">Sketch</a>, you can grab <a href="https://cloudup.com/cMPXM8Va2cy">the source file for the mockups</a> (updated April 6th).
+Please see [SECURITY.md](/SECURITY.md).
